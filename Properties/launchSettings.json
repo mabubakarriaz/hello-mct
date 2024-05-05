@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "hello_mct": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
