@@ -15,18 +15,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v4
 
-    - name: Setup .NET
+    - name: setup project dependencies 
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
 
-    - name: Restore dependencies
+    - name: get code dependencies
       run: dotnet restore hello_mct.csproj
 
-    - name: Build
+    - name: Build code
       run: dotnet build hello_mct.csproj --no-restore
 
-    - name: Test
+    - name: Unit test code
       run: dotnet test hello_mct.csproj --no-build --verbosity normal
